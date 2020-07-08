@@ -5,8 +5,8 @@
 3. Team average and player average
 4. Highest and lowest average score on the team
 5. Highest and lowest average score per item
-6. filter if a player has the same number as another player for a specific item
-7. filter if a player has at least one item
+6. Filter if a player has the same number as another player for a specific item
+7. Filter if a player has at least one item
 
 The focus is on practicing how to use the dictionary and list data structure for problem solving
 """
@@ -15,6 +15,7 @@ import pprint
 import copy
 from os import system, name
 import time
+from collections import Counter
 
 # player dictionary template
 player = {'arrow': 0, 'dagger': 0, 'gold coin': 0, 'rope': 0, 'torch': 0}
@@ -55,8 +56,26 @@ def insertion(player):
             clear()
             continue
         break
-
+    
+    print("\n..........Team structure..........")
     pprint.pprint(gamers_list)
+    return gamers_list
 
 
-insertion(player)
+def countTeam(team):
+    counter = Counter(team[0])
+    for i in team[1: ]:
+            counter += Counter(i)
+    
+    print("\n...............Count...............")
+    for k, v in counter.items():
+        print(k + " : " + str(v))
+
+    
+    total = 0
+    for value in counter.values():
+        total = total + value
+    print("\nTotal: " + str(total))
+
+team = insertion(player)
+countTeam(team)
