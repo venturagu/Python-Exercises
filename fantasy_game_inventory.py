@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 """The challenge is construct a script to a fantasy game inventory which be have follows features:
 
 1. Insert players into a team

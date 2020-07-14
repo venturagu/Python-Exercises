@@ -1,3 +1,6 @@
+#! /usr/bin/python3
+
+
 """ Prints a list with a better view
 
     This script allows the user to place some items he needs in

@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import sys
 
 
@@ -18,6 +20,7 @@ def readNumber():
     except Exception:
         print('Error: An integer value must be entered.')
         sys.exit()
+
 
 number = readNumber()
 while number != 1:
