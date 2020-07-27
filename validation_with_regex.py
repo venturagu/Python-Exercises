@@ -92,8 +92,32 @@ you can use slash "/", dot "." or hyphen "-":  ')
 - Please put a date again with correct format")
 
 
+# Make sure the password is in the correct format.
+def passwordValidation():
+    senhaRegex = re.compile(
+        r'^(?=.*\d{1}.*\d{1}.*\d{1})(?=.*[a-z])(?=.*[A-Z])(?=.*[#?!@$%^&*-]).{8,15}$')
+
+    while(1):
+        try:
+            print("""\nThe password need have:\n 
+    at least one capital letter
+    at least two special characters
+    at least eight digits and a maximum of 15
+    at least three numbers\n""")
+
+            senha = input("Enter a password: ")
+            mo = senhaRegex.match(senha)
+            print("\n\033[92m" + str(mo[0]) + "\033[m is a valid password!")
+            break
+        except(Exception):
+            clear()
+            print("\n\033[1;31mInvalid Password\033[m \
+- Please enter a valid password")
+
+
 searchDatePatterns(text)
 searchDatePatterns(text2)
 currentDateValidation(text)
 currentDateValidation(text2)
 changeDateFormat()
+passwordValidation()
